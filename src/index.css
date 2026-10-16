@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply bg-slate-950 text-slate-100 antialiased selection:bg-rose-500 selection:text-white;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+}
+
+.btn-mobile-interactive {
+  transition: transform 0.12s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.btn-mobile-interactive:active {
+  transform: scale(0.93) translateY(2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes subtle-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+.animate-subtle-float {
+  animation: subtle-float 3s ease-in-out infinite;
+}
